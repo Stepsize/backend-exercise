@@ -5,7 +5,7 @@
 sleep 3
 
 # Generate client
-docker run --network=host --rm -v ${pwd}/../:/local openapitools/openapi-generator-cli generate -i http://localhost:3001 -g typescript-node -o /local/shared/dispatch-client
+docker run --network=host --rm -v "${PWD}/../":/local openapitools/openapi-generator-cli generate -i http://localhost:3001 -g typescript-node -o /local/shared/dispatch-client
 
 # Stop services
 (cd ../ && docker-compose down)
